@@ -6,25 +6,32 @@ enabled=1
 gpgcheck=1
 gpgkey=https://yum.dockerproject.org/gpg
 
-
 type: EOF
 
-sudo yum install docker-engine -y
+#sudo yum install docker-engine -y
 
-docker search ubuntu
+Run the docker service in RHEL
+#dockerd
+
+Seach docker repository
+#docker search ubuntu
 
 CNCF- Cloud Native Computing Foundation
 https://www.cncf.io/
 
-docker search ubuntu
+#docker images
+#docker pull ubuntu
+#docker pull centos
 
-docker pull ubuntu
-docker pull centos
-
-docker run -it ubuntu 
- it=>interactive
+#docker run -it ubuntu 
+it=>interactive
 
 --------------------break-------------------------
+
+https://docs.openshift.com/container-platform/3.5/architecture/index.html
+
+All kernels are created in C language
+
 
 
 
