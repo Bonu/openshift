@@ -73,10 +73,15 @@ OS = OperatingSystem without Kernel
 
 #oc get projects
 #oc project default
-
 #oc logs projectname
-
 #oc get events - problamatic events
+#oc logs -f bc/ruby-ex
+#oc get pods
+#oc logs <podname>
+#oc 
+
+podman uses QUAY registry
+
 
 
 
