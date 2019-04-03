@@ -34,5 +34,6 @@ All kernels are created in C language
 
 Docker is a container and Openshift is a plaform. Docker creates a container.
 
-
+Kubernetes has pods
+A pod is a sandbox with multiple containers in it.
 
