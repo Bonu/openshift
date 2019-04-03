@@ -32,6 +32,7 @@ https://docs.openshift.com/container-platform/3.5/architecture/index.html
 
 All kernels are created in C language
 
+Docker is a container and Openshift is a plaform. Docker creates a container.
 
 
 
