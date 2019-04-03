@@ -69,6 +69,15 @@ Hardware -> OSK1 -> Docker -> OS1, OS2, ...OSN
 OSK = OperatingSystem + Kernel
 OS = OperatingSystem without Kernel
 
+-----------------------------------break--------------------------------
+
+#oc get projects
+#oc project default
+
+#oc logs projectname
+
+#oc get events - problamatic events
+
 
 
         
