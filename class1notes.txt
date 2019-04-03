@@ -78,10 +78,14 @@ OS = OperatingSystem without Kernel
 #oc logs -f bc/ruby-ex
 #oc get pods
 #oc logs <podname>
-#oc 
 
 podman uses QUAY registry
 
+SDN - software defined networking
+
+#oc describe pod <podname> // to see the content of the pod
+
+--------------------------------EOD----------------------------------
 
 
 
