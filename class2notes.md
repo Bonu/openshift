@@ -236,7 +236,9 @@ jbonu.example.com
 
 # host group for nodes, includes region info
 [nodes]
-jbonu.example.com openshift_node_group_name='node-config-master'
+jbonu openshift_node_group_name='node-config-master'
+jbonu openshift_node_group_name='node-config-compute'
+
 
 ```oc adm policy add-cluster-role-to-user cluster:admin jack
 oc adm policy remove-cluster-role-to-user cluster:admin jack
