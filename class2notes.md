@@ -238,9 +238,15 @@ jbonu.example.com
 [nodes]
 jbonu.example.com openshift_node_group_name='node-config-master'
 
+```oc adm policy add-cluster-role-to-user cluster:admin jack
+oc adm policy remove-cluster-role-to-user cluster:admin jack
+
+oc whoami
+
+oc login -u jack -p jack
 
 
-
+```
 
 
 
