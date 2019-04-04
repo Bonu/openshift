@@ -1,31 +1,35 @@
-sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
+#### Install Docker 
+
+```sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
 [dockerrepo]
 name=Docker Repository
 baseurl=https://yum.dockerproject.org/repo/main/centos/7/
 enabled=1
 gpgcheck=1
 gpgkey=https://yum.dockerproject.org/gpg
+```
 
 type: EOF
 
-#sudo yum install docker-engine -y
+```#sudo yum install docker-engine -y
+```
 
 Run the docker service in RHEL
-#dockerd
+`#dockerd`
 
 Seach docker repository
-#docker search ubuntu
+`#docker search ubuntu`
 
 CNCF- Cloud Native Computing Foundation
 https://www.cncf.io/
 
-#docker images
+```#docker images
 #docker pull ubuntu
 #docker pull centos
 
 #docker run -it ubuntu 
 it=>interactive
-
+```
 --------------------break-------------------------
 
 https://docs.openshift.com/container-platform/3.5/architecture/index.html
