@@ -173,6 +173,77 @@ To use this example, modify the file to match your environment and specification
 Running the RPM-based installer
 
 
+The RPM-based installer uses Ansible installed via RPM packages to run playbooks and configuration files available on the local host.
+	
+
+Do not run OpenShift Ansible playbooks under nohup. Using nohup with the playbooks causes file descriptors to be created but not closed. Therefore, the system can run out of files to open and the playbook fails.
+
+To run the RPM-based installer:
+
+    Change to the playbook directory and run the prerequisites.yml playbook. This playbook installs required software packages, if any, and modifies the container runtimes. Unless you need to configure the container runtimes, run this playbook only once, before you deploy a cluster the first time:
+~~~~~~~~~~~~~~~~~~~~
+    $ cd /usr/share/ansible/openshift-ansible
+    $ ansible-playbook [-i /path/to/inventory] \ 
+      playbooks/prerequisites.yml
+~~~~~~~~~~~~~~~~~~~~
+    	If your inventory file is not in the /etc/ansible/hosts directory, specify -i and the path to the inventory file.
+
+    Change to the playbook directory and run the deploy_cluster.yml playbook to initiate the cluster installation:
+
+~~~~~~~~~~~~~~~~~~~~
+    $ cd /usr/share/ansible/openshift-ansible
+    $ ansible-playbook [-i /path/to/inventory] \
+        playbooks/deploy_cluster.yml
+~~~~~~~~~~~~~~~~~~~~
+    	If your inventory file is not in the /etc/ansible/hosts directory, specify -i and the path to the inventory file.
+
+. If your installation succeeded, verify the installation. If your installation failed, retry the installation.
+
+
+
+===================================================================
+
+hosts file for all in one
+
+
+# Create an OSEv3 group that contains the masters, nodes, and etcd groups
+[OSEv3:children]
+masters
+nodes
+etcd
+
+# Set variables common for all OSEv3 hosts
+[OSEv3:vars]
+# SSH user, this user should allow ssh based auth without requiring a password
+ansible_ssh_user=root
+
+# If ansible_ssh_user is not root, ansible_become must be set to true
+#ansible_become=true
+
+openshift_deployment_type=origin
+openshift_disable_check=memory_availability,disk_availability,docker_image_availability,package_availability
+
+# uncomment the following to enable htpasswd authentication; defaults to AllowAllPasswordIdentityProvider
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
+
+# host group for masters
+[masters]
+jbonu.example.com
+
+# host group for etcd
+[etcd]
+jbonu.example.com
+
+# host group for nodes, includes region info
+[nodes]
+jbonu.example.com openshift_node_group_name='node-config-master'
+
+
+
+
+
+
+
 
 
 
