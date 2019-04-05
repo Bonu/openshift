@@ -20,7 +20,8 @@ make an entry 192.168.1.33
 
 rushil1234@gmail.com
 
-```oc create serviceaccount jenkins
+```oc adm policy add-cluster-role-to-user cluster-admin openshift
+oc create serviceaccount jenkins
 oc new-project dev --display-name="Tasks-Dev"
 co new-project stage --display-name="Tasks-Stage"
 co new-project cicd --display-name="CI/CD"
