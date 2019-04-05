@@ -17,3 +17,6 @@ vi /etc/hosts
 
 make an entry 192.168.1.33
 
+
+rushil1234@gmail.com
+
